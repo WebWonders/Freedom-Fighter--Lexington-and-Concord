@@ -1,4 +1,7 @@
-var introScene = document.getElementById('intoScene');
+//game menu code
+
+//introScene code (animated logo)
+//var introScene = document.getElementById('introScene');
 $(document).ready(function() {
     //hide all objects except the intro video
     $('#menu').hide();
@@ -14,18 +17,18 @@ $(document).ready(function() {
     });
 });
 
-var menu = document.getElementById('menu');
-var menuCtx = menu.getContext('2d');
-
-function menuButton(width, height, xC, yC, text, ref) {
-    this.width = width;
-    this.height = height;
-    this.x = xC;
-    this.y = yC;
-    this.text = text;
-    this.ref = href;
-
-    this.linkUp = function() {
-        
-    }
-}
+//menu code
+//var menu = document.getElementById('menu');
+$(document).ready(function() {
+    $('#playButton').onClick(function() {
+        //play game
+    });
+    $('#aboutButton').onClick(function() {
+        $('#menu').hide();
+        $('#about').show();
+    });
+    $('#how2playButton').onClick(function() {
+        $('#menu').hide();
+        $('#how2play').show();
+    });
+});
