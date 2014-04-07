@@ -14,3 +14,18 @@ $(document).ready(function() {
     });
 });
 
+var menu = document.getElementById('menu');
+var menuCtx = menu.getContext('2d');
+
+function menuButton(width, height, xC, yC, text, ref) {
+    this.width = width;
+    this.height = height;
+    this.x = xC;
+    this.y = yC;
+    this.text = text;
+    this.ref = href;
+
+    this.linkUp = function() {
+        
+    }
+}
