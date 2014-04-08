@@ -10,7 +10,7 @@ $(document).ready(function() {
     $('#how2play').hide();
     
     //when the user clicks the video, it will stop and the menu will show
-    $('#introScene').onClick(function() {
+    $('#introScene').click(function() {
         $(this).hide();
         $('#menu').show();
         //introScene.pause();
@@ -20,14 +20,14 @@ $(document).ready(function() {
 //menu code
 //var menu = document.getElementById('menu');
 $(document).ready(function() {
-    $('#playButton').onClick(function() {
+    $('#playButton').click(function() {
         //play game
     });
-    $('#aboutButton').onClick(function() {
+    $('#aboutButton').click(function() {
         $('#menu').hide();
         $('#about').show();
     });
-    $('#how2playButton').onClick(function() {
+    $('#how2playButton').click(function() {
         $('#menu').hide();
         $('#how2play').show();
     });
