@@ -6,6 +6,7 @@
     border-radius: 5px;
     width: 500px;
     height: 475;
+    margin: auto;
 }
 .button {
     width: 100px;
@@ -16,6 +17,7 @@
     padding: 10px;
     border-radius: 10px;
     text-align: center;
+    margin: auto;
 }
 canvas {
     border-radius: 5px;
