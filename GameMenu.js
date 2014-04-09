@@ -21,12 +21,15 @@ $(document).ready(function() {
 //var menu = document.getElementById('menu');
 $(document).ready(function() {
     $('#playButton').click(function() {
+        $('#menu').hide();
         //play game
     });
+    
     $('#aboutButton').click(function() {
         $('#menu').hide();
         $('#about').show();
     });
+    
     $('#how2playButton').click(function() {
         $('#menu').hide();
         $('#how2play').show();
