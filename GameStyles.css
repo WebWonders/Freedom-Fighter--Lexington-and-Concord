@@ -3,11 +3,16 @@
     border: 2px solid #003399;
     text-align: center;
     font-family: Courier, serif;
+    border-radius: 5px;
 }
 .button {
-    width: 80px;
+    width: 90px;
     height: 20px;
     background-color: #3366CC;
     box-shadow: 5px 5px 3px #888888;
     position: inline-box;
+    border-radius: 10px;
+}
+canvas {
+    border-radius: 5px;
 }
