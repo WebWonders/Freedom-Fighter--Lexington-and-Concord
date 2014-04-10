@@ -24,14 +24,15 @@ var COLUMNS = 20;
 var grass = 0;
 var road = 1;
 var tree = 2;
+var wood = 3;
 var NUM_STATES = 4;
 
 //end tileset variables/constants
 
 function Tile(){
-		tTile = new Sprite(canvas, "#", 32, 32, tile);
+		tTile = new Sprite(canvas, "Images/GrassTile.png", 32, 32, tTile);
         tTile.state = GRASS;
-        tTile.images = new Array("#", "#", "#", "#");
+        tTile.images = new Array("Images/GrassTile.png", "Images/WoodPlanksTile.png", "Images/Tree.png", "#");
         tTile.row = 0;
         tTile.col = 0;
         
@@ -56,54 +57,59 @@ function Tile(){
 } //end Tile()
     
 function setupTiles(){
-        tileset = new Array(ROWS);
-        for (row = 0; row < ROWS; row++){
-            tRow = new Array(COLS);
-            for (col = 0; col < COLS; col++){
-                tRow[col] = new Tile();
-                xPos = 16 + (32 * col);
-                yPos = 16 + (32 * row);
-                tRow[col].setPosition(xPos, yPos);
-                tRow[col].row = row;
-                tRow[col].col = col;
-            } // end col for loop
-            tileset[row] = tRow;
-        } // end row for loop;
-    } // end setupTiles
+  tileset = new Array(ROWS);
+  for (row = 0; row < ROWS; row++){
+    tRow = new Array(COLS);
+    for (col = 0; col < COLS; col++){
+      tRow[col] = new Tile();
+      xPos = 16 + (32 * col);
+      yPos = 16 + (32 * row);
+      tRow[col].setPosition(xPos, yPos);
+      tRow[col].row = row;
+      tRow[col].col = col;
+    } // end for
+    tileset[row] = tRow;
+  } // end for
+} // end setupTiles()
     
 function updateTiles(){
-        for (row = 0; row < ROWS; row++){
-            for (col = 0; col < COLS; col++){
-                tileset[row][col].update();
-            } // end for
-        } // end for
+  for (row = 0; row < ROWS; row++){
+    for (col = 0; col < COLS; col++){
+      tileset[row][col].update();
+    } // end for
+  } // end for
 } // end updateTiles()
     
 function loadMap() {
-        map = [
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)  
-        ];
+  map = [
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+  ];
         
-        for (row = 0; row < ROWS; row++){
-            for (col = 0; col < COLS; col++){
-                currentVal = map[row][col];
-                tileset[row][col].setState(currentVal);
-            } // end for
-        } // end for
+  for (row = 0; row < ROWS; row++){
+    for (col = 0; col < COLS; col++){
+      currentVal = map[row][col];
+      tileset[row][col].setState(currentVal);
+    } // end for
+  } // end for
 } //end loadMap()
 
 function takeFunds(amount) {
