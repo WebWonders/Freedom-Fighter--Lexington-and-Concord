@@ -47,7 +47,17 @@ function Elite() {
 } //end Elite()
 
 function makeEnemies() {
-	//this creates all the enemies for this level
+	var infantry = [];
+    for (i = 0; i < NUM_INFANTRY; i++){
+        infantry[i] = new Infantry();
+        infantry[i].setPosition();
+    } //end for
+    
+    var elites = [];
+    for (i = 0; i < NUM_ELITES; i++){
+        elites[i] = new Elite();
+        elites[i].setPosition();
+    } //end for
 } //end makeEnemies()
 
 function showFunds() {
@@ -58,9 +68,9 @@ function showFunds() {
 function init() {
 	alert("Welcome");
 	var userName = prompt("Please enter your first name:", "Your Name");
+	makeEnemies();
 } //end init()
 
 function update() {
-	makeEnemies();
 	showFunds();
 } //end update()
