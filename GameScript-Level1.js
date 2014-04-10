@@ -19,8 +19,100 @@ FUNDS = 300;
 
 //tileset variables/constants
 var tileset;
+var ROWS = 20;
+var COLUMNS = 20;
+var grass = 0;
+var road = 1;
+var tree = 2;
+var NUM_STATES = 4;
 
 //end tileset variables/constants
+
+function Tile(){
+		tTile = new Sprite(canvas, "#", 32, 32, tile);
+        tTile.state = GRASS;
+        tTile.images = new Array("#", "#", "#", "#");
+        tTile.row = 0;
+        tTile.col = 0;
+        
+        tTile.setState = function(state){
+            this.state = state;
+            this.setImage(this.images[this.state]);
+        } // end setState()
+        
+        tTile.getRow = function(){
+            return this.row;
+        } // end getRow()
+        
+        tTile.getCol = function(){
+            return this.col;
+        } // end getCol()
+        
+        tTile.getState = function(){
+            return this.state;
+        } // end getState()
+        
+        return tTile;
+} //end Tile()
+    
+function setupTiles(){
+        tileset = new Array(ROWS);
+        for (row = 0; row < ROWS; row++){
+            tRow = new Array(COLS);
+            for (col = 0; col < COLS; col++){
+                tRow[col] = new Tile();
+                xPos = 16 + (32 * col);
+                yPos = 16 + (32 * row);
+                tRow[col].setPosition(xPos, yPos);
+                tRow[col].row = row;
+                tRow[col].col = col;
+            } // end col for loop
+            tileset[row] = tRow;
+        } // end row for loop;
+    } // end setupTiles
+    
+function updateTiles(){
+        for (row = 0; row < ROWS; row++){
+            for (col = 0; col < COLS; col++){
+                tileset[row][col].update();
+            } // end for
+        } // end for
+} // end updateTiles()
+    
+function loadMap() {
+        map = [
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
+          new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)  
+        ];
+        
+        for (row = 0; row < ROWS; row++){
+            for (col = 0; col < COLS; col++){
+                currentVal = map[row][col];
+                tileset[row][col].setState(currentVal);
+            } // end for
+        } // end for
+} //end loadMap()
+
+function takeFunds(amount) {
+	FUNDS = FUNDS - amount;
+} //end takeFunds()
+
+function addFunds(amount) {
+	FUNDS = FUNDS + amount;
+} //end addFunds()
 
 //player gunmen
 function BasicGunman() {
@@ -69,6 +161,8 @@ function init() {
 	alert("Welcome");
 	var userName = prompt("Please enter your first name:", "Your Name");
 	makeEnemies();
+	setupTiles();
+    loadMap();
 } //end init()
 
 function update() {
