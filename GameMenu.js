@@ -22,7 +22,8 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#playButton').click(function() {
         $('#menu').hide();
-        //play game
+        $('#gameCanvas-level1').show();
+        init();
     });
     
     $('#aboutButton').click(function() {
