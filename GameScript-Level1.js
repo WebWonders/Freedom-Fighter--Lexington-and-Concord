@@ -5,7 +5,7 @@ var canvas = document.getElementById('game');
 var ctx = canvas.getContext('2d');
 
 //variables
-var coinImage = new Sprite(canvas, '#', 5, 5, 'coinImage');
+var coinImage = new Sprite(canvas, '#', 32, 32, 'coinImage');
 var score;
 
 //end variables
