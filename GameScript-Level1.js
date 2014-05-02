@@ -1,8 +1,9 @@
 //level 1 game script
 
-//canvas/context variables
+//canvas/context code
 var canvas = document.getElementById('game');
 var ctx = canvas.getContext('2d');
+var FPS = 30;
 
 canvas.width = 500;
 canvas.height = 500;
@@ -183,3 +184,5 @@ function init() {
 function update() {
 	showFunds();
 } //end update()
+
+setInterval(update, 1000/FPS);
