@@ -4,6 +4,9 @@
 var canvas = document.getElementById('game');
 var ctx = canvas.getContext('2d');
 
+canvas.width = 500;
+canvas.height = 500;
+
 //variables
 var coinImage = new Sprite(canvas, 'Images/Coin.png', 32, 32, 'coinImage');
 var score;
