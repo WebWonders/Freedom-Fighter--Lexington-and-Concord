@@ -1,4 +1,4 @@
-#menu {
+#menu, #about, #how2play {
     background-color: #0033CC;
     border: 2px solid #003399;
     text-align: center;
@@ -20,4 +20,10 @@
 }
 canvas {
     border-radius: 5px;
+}
+
+#game {
+    border: 2px solid #003399;
+    border-radius: 5px;
+    margin: auto;
 }
