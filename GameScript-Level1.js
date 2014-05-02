@@ -169,8 +169,7 @@ function init() {
 	alert("Welcome");
 	var userName = prompt("Please enter your first name:", "Your Name");
 	
-	JSON.Stringify(userName);
-	localStorage.setItem("User Name", "userName");
+	localStorage.setItem("User Name", userName);
 	
 	makeEnemies();
 	setupTiles();
