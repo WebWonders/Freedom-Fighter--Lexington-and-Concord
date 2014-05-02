@@ -162,7 +162,8 @@ function makeEnemies() {
 
 function showFunds() {
 	context.font = "10px Courier";
-	context.fillText(coinImage + FUNDS, 15, 175);
+	coinImage.setPosition(30, 175);
+	context.fillText(FUNDS, 15, 175);
 }
 
 function init() {
