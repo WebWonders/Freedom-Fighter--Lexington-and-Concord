@@ -35,29 +35,29 @@ var NUM_STATES = 4;
 
 function Tile(){
 	tTile = new Sprite(canvas, "Images/GrassTile.png", 32, 32, tTile);
-        tTile.state = GRASS;
-        tTile.images = ["Images/GrassTile.png", "Images/WoodPlanksTile.png", "Images/Tree.png", "Images/Road.png"];
-        tTile.row = 0;
-        tTile.col = 0;
+	tTile.state = GRASS;
+	tTile.images = ["Images/GrassTile.png", "Images/WoodPlanksTile.png", "Images/Tree.png", "Images/Road.png"];
+	tTile.row = 0;
+	tTile.col = 0;
+	
+	tTile.setState = function(state){
+		this.state = state;
+		this.setImage(this.images[this.state]);
+	} // end setState()
+	
+	tTile.getRow = function(){
+		return this.row;
+	} // end getRow()
         
-        tTile.setState = function(state){
-            this.state = state;
-            this.setImage(this.images[this.state]);
-        } // end setState()
+	tTile.getCol = function(){
+		return this.col;
+	} // end getCol()
         
-        tTile.getRow = function(){
-            return this.row;
-        } // end getRow()
+	tTile.getState = function(){
+		return this.state;
+	} // end getState()
         
-        tTile.getCol = function(){
-            return this.col;
-        } // end getCol()
-        
-        tTile.getState = function(){
-            return this.state;
-        } // end getState()
-        
-        return tTile;
+	return tTile;
 } //end Tile()
     
 function setupTiles(){
@@ -160,7 +160,7 @@ function makeEnemies() {
     var elites = [];
     for (i = 0; i < NUM_ELITES; i++){
         elites[i] = new Elite();
-        elites[i].setPosition();
+        elites[i].setPosition(1, 1); //change this position later...
     } //end for
 } //end makeEnemies()
 
@@ -172,9 +172,9 @@ function showFunds() {
 
 function init() {
 	alert("Welcome");
-	var userName = prompt("Please enter your first name:", "Your Name");
+	var userName;
 	
-	localStorage.setItem("User Name", userName);
+	localStorage.setItem("USERNAME", userName);
 	
 	makeEnemies();
 	setupTiles();
