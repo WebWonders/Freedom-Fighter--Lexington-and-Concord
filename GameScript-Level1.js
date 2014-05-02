@@ -132,7 +132,7 @@ function BasicGunman() {
 function Infantry() {
 	var tInfantry = new Sprite(canvas, '#', 15, 20, 'Infantry');
 	tInfantry.health = 50;
-  tBasicGunMan.MAXSPEED = 10;
+  	tBasicGunMan.MAXSPEED = 10;
 
 	return tInfantry
 } //end Infantry()
@@ -141,7 +141,7 @@ function Infantry() {
 function Elite() {
 	var tElite = new Sprite(canvas, '#', 15, 20, 'Elite');
 	tElite.health = 75;
-  tBasicGunMan.MAXSPEED = 15;
+  	tBasicGunMan.MAXSPEED = 15;
 
 	return tElite;
 } //end Elite()
