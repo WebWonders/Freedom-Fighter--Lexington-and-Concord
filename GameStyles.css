@@ -18,6 +18,15 @@
     text-align: center;
     margin: auto;
 }
+
+.button:hover {
+    background: linear-gradient(180deg, #3399FF, #0066CC);
+}
+
+.button:active {
+    background: linear-gradient(0deg, #3399FF, #0066CC);
+}
+
 canvas {
     border-radius: 5px;
 }
