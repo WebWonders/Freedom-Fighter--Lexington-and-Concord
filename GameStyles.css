@@ -7,6 +7,9 @@
     width: 500px;
     height: 475px;
     margin: auto;
+    position: absolute;
+    top: 50px;
+    right: 30%;
 }
 .button {
     width: 115px;
