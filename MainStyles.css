@@ -1,1 +1,19 @@
- 
+#menubar {
+    width: 90%;
+    height: 20px;
+    position: absolute;
+    display: block;
+    background-color: #204366;
+    border: 2px solid #162F47;
+    border-radius: 10px;
+}
+
+.button {
+    display: inline-block;
+    height: 95%;
+    width: 20%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #4D6985;
+    border: 2px solid #71879D;
+}
