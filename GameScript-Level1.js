@@ -1,9 +1,10 @@
 //level 1 game script
 
 //canvas/context code
+var FPS = 30;
+
 var canvas = document.getElementById('game');
 var ctx = canvas.getContext('2d');
-var FPS = 30;
 
 canvas.width = 500;
 canvas.height = 500;
