@@ -4,10 +4,13 @@
 var FPS = 30;
 
 var canvas = document.getElementById("game_level1");
+console.log(canvas);
 var ctx = canvas.getContext("2d");
+console.log(ctx);
 
 canvas.width = 500;
 canvas.height = 500;
+console.log(canvas.width + "   " + canvas.height);
 
 //variables
 var coinImage = new Sprite(canvas, 'Images/Coin.png', 32, 32, 'coinImage');
