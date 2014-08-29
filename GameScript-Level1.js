@@ -3,8 +3,8 @@
 //canvas/context code
 var FPS = 30;
 
-var canvas = document.getElementById('game_level1');
-var ctx = canvas.getContext('2d');
+var canvas = document.getElementById("game_level1");
+var ctx = canvas.getContext("2d");
 
 canvas.width = 500;
 canvas.height = 500;
