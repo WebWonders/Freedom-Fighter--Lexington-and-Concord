@@ -1,3 +1,7 @@
+h1 {
+    text-align: center;
+}
+
 #menu, #about, #how2play {
     background-color: #0033CC;
     border: 2px solid #003399;
