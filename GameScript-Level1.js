@@ -15,9 +15,9 @@ var score;
 //end variables
 
 //constants
-NUM_INFANTRY = 10;
-NUM_ELITES = 5;
-FUNDS = 300;
+var NUM_INFANTRY = 10;
+var NUM_ELITES = 5;
+var FUNDS = 300;
 
 //end constants
 
