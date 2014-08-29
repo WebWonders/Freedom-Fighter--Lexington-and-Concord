@@ -9,7 +9,7 @@ var ctx = canvas.getContext("2d");
 console.log(ctx);
 
 canvas.width = 500;
-canvas.height = 500;
+canvas.height = 475;
 console.log(canvas.width + "   " + canvas.height);
 
 //variables
