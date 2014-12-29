@@ -28,7 +28,7 @@ var FUNDS = 300;
 //tileset variables/constants
 var tileset;
 var ROWS = 20;
-var COLUMNS = 20;
+var COLS = 20;
 var grass = 0;
 var road = 1;
 var tree = 2;
@@ -38,8 +38,8 @@ var NUM_STATES = 4;
 //end tileset variables/constants
 
 function Tile(){
-	tTile = new Sprite(canvas, "Images/GrassTile.png", 32, 32, tTile);
-	tTile.state = GRASS;
+	var tTile = new Sprite(canvas, "Images/GrassTile.png", 32, 32, tTile);
+	tTile.state = grass;
 	tTile.images = ["Images/GrassTile.png", "Images/WoodPlanksTile.png", "Images/Tree.png", "Images/Road.png"];
 	tTile.row = 0;
 	tTile.col = 0;
@@ -67,7 +67,7 @@ function Tile(){
 function setupTiles(){
   tileset = new Array(ROWS);
   for (row = 0; row < ROWS; row++){
-    tRow = new Array(COLS);
+    var tRow = new Array(COLS);
     for (col = 0; col < COLS; col++){
       tRow[col] = new Tile();
       xPos = 16 + (32 * col);
@@ -140,7 +140,7 @@ function BasicGunman() {
 function Infantry() {
 	var tInfantry = new Sprite(canvas, '#', 15, 20, 'Infantry');
 	tInfantry.health = 50;
-  	tBasicGunMan.MAXSPEED = 10;
+  tInfantry.MAXSPEED = 10;
 
 	return tInfantry
 } //end Infantry()
@@ -149,7 +149,7 @@ function Infantry() {
 function Elite() {
 	var tElite = new Sprite(canvas, '#', 15, 20, 'Elite');
 	tElite.health = 75;
-  	tBasicGunMan.MAXSPEED = 15;
+  tElite.MAXSPEED = 15;
 
 	return tElite;
 } //end Elite()
@@ -169,9 +169,9 @@ function makeEnemies() {
 } //end makeEnemies()
 
 function showFunds() {
-	context.font = "10px Courier";
+	ctx.font = "10px Courier";
 	coinImage.setPosition(30, 175);
-	context.fillText(FUNDS, 15, 175);
+	ctx.fillText(FUNDS, 15, 175);
 }
 
 function init() {
