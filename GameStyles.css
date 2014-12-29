@@ -2,12 +2,16 @@ h1 {
     text-align: center;
 }
 
-#menu, #about, #how2play {
+menuDiv {
+    background-image: url(Assets/Media/Images/GenWA-AmericanWar.jpg);
     background-color: #0033CC;
+    
     border: 2px solid #003399;
+    border-radius: 5px;
+    
     text-align: center;
     font-family: Courier, serif;
-    border-radius: 5px;
+    
     width: 500px;
     height: 475px;
     margin: auto;
@@ -15,14 +19,18 @@ h1 {
     top: 50px;
     right: 30%;
 }
+
 .button {
     width: 115px;
     height: 35px;
+    
     background-color: #3366CC;
-    box-shadow: 5px 5px 3px #888888;
-    display: inline-block;
     border-radius: 10px;
+    box-shadow: 5px 5px 3px #888888;
+    
     text-align: center;
+    
+    display: inline-block;
     margin: auto;
 }
 
@@ -41,5 +49,6 @@ canvas {
 #game {
     border: 2px solid #003399;
     border-radius: 5px;
+    
     margin: auto;
 }
