@@ -5,6 +5,8 @@ h1 {
 
 .menuDiv {
     background-image: url(Assets/Media/Images/GenWA-AmericanWar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: #0033CC;
     
     border: 2px solid #003399;
