@@ -40,7 +40,7 @@ var NUM_STATES = 4;
 function Tile(){
 	var tTile = new Sprite(canvas, "Assets/Media/Images/Tiles/GrassTile.png", 32, 32, tTile);
 	tTile.state = grass;
-	tTile.images = ["Assets/Media/Images/Tiles/GrassTile.png", "Assets/Media/Images/Tiles/WoodPlanksTile.png", "Assets/Media/Images/Tiles/Tree.png", "Assets/Media/Images/Tiles/Road.png"];
+	tTile.images = new Array("Assets/Media/Images/Tiles/GrassTile.png", "Assets/Media/Images/Tiles/WoodPlanksTile.png", "Assets/Media/Images/Tiles/Tree.png", "Assets/Media/Images/Tiles/Road.png");
 	tTile.row = 0;
 	tTile.col = 0;
 	
