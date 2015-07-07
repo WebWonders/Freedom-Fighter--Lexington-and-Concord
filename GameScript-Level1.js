@@ -132,9 +132,18 @@ function addFunds(amount) {
 function BasicGunman() {
 	var tBasicGunman = new Sprite(canvas, '#', 15, 20, 'Basic Gunman');
 	tBasicGunman.health = 50;
+	tBasicGunman.range = 10;
 
 	return tBasicGunman;
 } //end BasicGunman()
+
+//player cannon
+function Cannon() {
+	var tCannon = new Sprite(canvas, '#', 20, 20, 'Cannon Pic');
+	tCannon.range = 20;
+	
+	return tCannon;
+}
 
 //enemy infantry
 function Infantry() {
@@ -150,6 +159,7 @@ function Elite() {
 	var tElite = new Sprite(canvas, '#', 15, 20, 'Elite');
 	tElite.health = 75;
 	tElite.MAXSPEED = 15;
+	tElite.range = 10;
 
 	return tElite;
 } //end Elite()
