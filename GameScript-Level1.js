@@ -175,7 +175,7 @@ function Runner() {
   var tRunner = new Sprite(canvas, '#', 15, 20, 'Runner');
   tRunner.health = 20;
   tRunner.MAXSPEED = 25;
-  tElite.bounty = 25;
+  tRunner.bounty = 25;
 }
 
 //enemy general
