@@ -21,6 +21,8 @@ var score;
 //constants
 var NUM_INFANTRY = 10;
 var NUM_ELITES = 5;
+var NUM_RUNNERS = 3;
+var NUM_GENERALS = 1;
 var FUNDS = 300;
 
 //end constants
@@ -133,6 +135,7 @@ function BasicGunman() {
 	var tBasicGunman = new Sprite(canvas, '#', 15, 20, 'Basic Gunman');
 	tBasicGunman.health = 50;
 	tBasicGunman.range = 10;
+  tBasicGunman.cost = 50;
 
 	return tBasicGunman;
 } //end BasicGunman()
@@ -141,15 +144,17 @@ function BasicGunman() {
 function Cannon() {
 	var tCannon = new Sprite(canvas, '#', 20, 20, 'Cannon Pic');
 	tCannon.range = 20;
+  tCannon.cost = 150;
 	
 	return tCannon;
-}
+} //end Cannon()
 
 //enemy infantry
 function Infantry() {
 	var tInfantry = new Sprite(canvas, '#', 15, 20, 'Infantry');
 	tInfantry.health = 50;
 	tInfantry.MAXSPEED = 10;
+  tInfantry.bounty = 25;
 
 	return tInfantry
 } //end Infantry()
@@ -160,9 +165,26 @@ function Elite() {
 	tElite.health = 75;
 	tElite.MAXSPEED = 15;
 	tElite.range = 10;
+  tElite.bounty = 50;
 
 	return tElite;
 } //end Elite()
+
+//enemy runner
+function Runner() {
+  var tRunner = new Sprite(canvas, '#', 15, 20, 'Runner');
+  tRunner.health = 20;
+  tRunner.MAXSPEED = 25;
+  tElite.bounty = 25;
+}
+
+//enemy general
+function General() {
+  var tGeneral = new Sprite(canvas, '#', 15, 20, 'General');
+  tGeneral.health = 150;
+  tGeneral.MAXSPEED = 10;
+  tGeneral.bounty = 100;
+} //end General()
 
 function makeEnemies() {
 	var infantry = [];
@@ -172,10 +194,16 @@ function makeEnemies() {
     } //end for
     
     var elites = [];
-    for (i = 0; i < NUM_ELITES; i++){
-        elites[i] = new Elite();
-        elites[i].setPosition(1, 1); //change this position later...
+    for (j = 0; j < NUM_ELITES; j++){
+        elites[j] = new Elite();
+        elites[j].setPosition(1, 1); //change this position later...
     } //end for
+
+    var runners = [];
+    for (l = 0; l < NUM_RUNNERS; l++){
+      runners[l] = new Runner();
+      runners[l].setPosition(1, 1); //change later...
+    }
 } //end makeEnemies()
 
 function showFunds() {
