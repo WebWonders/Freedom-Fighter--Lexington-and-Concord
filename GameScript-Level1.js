@@ -197,6 +197,7 @@ function init() {
 
 function update() {
 	showFunds();
+  
 } //end update()
 
 setInterval(update, 1000/FPS);
