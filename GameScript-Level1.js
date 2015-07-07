@@ -46,7 +46,7 @@ function Tile(){
 	
 	tTile.setState = function(state){
 		this.state = state;
-		this.setImage(this.images[this.state]);
+		this.setImageFile(this.images[this.state]);
 	} // end setState()
 	
 	tTile.getRow = function(){
