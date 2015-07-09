@@ -213,7 +213,6 @@ function showFunds() {
 }
 
 function init() {
-	alert("Welcome");
 	var userName;
 	
 	localStorage.setItem("USERNAME", userName);
