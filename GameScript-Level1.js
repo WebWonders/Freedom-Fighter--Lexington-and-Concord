@@ -202,7 +202,7 @@ function makeEnemies() {
     var runners = [];
     for (l = 0; l < NUM_RUNNERS; l++){
       runners[l] = new Runner();
-      runners[l].setPosition(1, 1); //change later...
+      runners[l].setPosition(1, 1); //change this position later...
     }
 } //end makeEnemies()
 
