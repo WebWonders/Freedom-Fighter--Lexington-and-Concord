@@ -200,9 +200,9 @@ function makeEnemies() {
     } //end for
 
     var runners = [];
-    for (l = 0; l < NUM_RUNNERS; l++){
-      runners[l] = new Runner();
-      runners[l].setPosition(1, 1); //change this position later...
+    for (q = 0; q < NUM_RUNNERS; q++){
+      runners[q] = new Runner();
+      runners[q].setPosition(1, 1); //change this position later...
     }
 } //end makeEnemies()
 
