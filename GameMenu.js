@@ -16,13 +16,26 @@ $(document).ready(function() {
     $('#introScene').click(function() {
         $(this).hide();
         $('#menu').show();
+        $('#audioButton').show();
         //introScene.pause();
     });
 });
 
 //menu code
 //var menu = document.getElementById('menu');
+var audioOn = true;
 $(document).ready(function() {
+    $('#audioButton').click(function() {
+        if (audioOn === true) {
+            $('#track').pause();
+            audioOn = false;
+        }
+        if (audioOn === false) {
+            $('#track').play();
+            audioOn = true;
+        }
+    });
+
     $('#playButton').click(function() {
         $('#menu').hide();
         $('#gameCanvas-level1').show();
