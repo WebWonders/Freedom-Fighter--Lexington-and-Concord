@@ -10,6 +10,7 @@ $(document).ready(function() {
     $('#how2play').hide();
     $('#gameCanvas-level1').hide();
     $('#BGTrack').hide();
+    $('#audioButton').hide();
     
     //when the user clicks the video, it will stop and the menu will show
     $('#introScene').click(function() {
