@@ -27,14 +27,24 @@ var audioOn = true;
 $(document).ready(function() {
     $('#audioButton').click(function() {
         if (audioOn === true) {
-            $('#track').pause();
+            vid.pause();
             audioOn = false;
         }
         if (audioOn === false) {
-            $('#track').play();
+            vid.play();
             audioOn = true;
         }
     });
+
+    var vid = document.getElementById("track"); 
+
+    function playVid() { 
+        vid.play(); 
+    } 
+
+    function pauseVid() { 
+        vid.pause(); 
+    }
 
     $('#playButton').click(function() {
         $('#menu').hide();
