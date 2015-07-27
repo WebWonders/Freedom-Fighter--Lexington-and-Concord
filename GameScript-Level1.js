@@ -72,8 +72,8 @@ function setupTiles(){
     var tRow = new Array(COLS);
     for (col = 0; col < COLS; col++){
       tRow[col] = new Tile();
-      xPos = 16 + (32 * col);
-      yPos = 16 + (32 * row);
+      var xPos = 16 + (32 * col);
+      var yPos = 16 + (32 * row);
       tRow[col].setPosition(xPos, yPos);
       tRow[col].row = row;
       tRow[col].col = col;
