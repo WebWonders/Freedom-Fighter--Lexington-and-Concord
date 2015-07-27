@@ -223,12 +223,12 @@ function init() {
 	
 	makeEnemies();
 	setupTiles();
-    loadMap();
+  loadMap();
 } //end init()
 
 function update() {
 	showFunds();
-  
+  updateTiles();
 } //end update()
 
 setInterval(update, 1000/FPS);
