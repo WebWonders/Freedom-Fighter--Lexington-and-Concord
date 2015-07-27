@@ -80,6 +80,7 @@ function setupTiles(){
     } // end for
     tileset[row] = tRow;
   } // end for
+  tileset.draw();
 } // end setupTiles()
     
 function updateTiles(){
@@ -190,18 +191,21 @@ function makeEnemies() {
 	var infantry = [];
     for (i = 0; i < NUM_INFANTRY; i++){
         infantry[i] = new Infantry();
+        infantry[i].draw();
         infantry[i].setPosition();
     } //end for
     
     var elites = [];
     for (j = 0; j < NUM_ELITES; j++){
         elites[j] = new Elite();
+        elites[j].draw();
         elites[j].setPosition(1, 1); //change this position later...
     } //end for
 
     var runners = [];
     for (q = 0; q < NUM_RUNNERS; q++){
       runners[q] = new Runner();
+      runners[q].draw();
       runners[q].setPosition(10, 10); //change this position later...
     }
 } //end makeEnemies()
