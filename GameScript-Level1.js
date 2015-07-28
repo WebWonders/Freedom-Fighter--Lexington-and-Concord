@@ -27,101 +27,47 @@ var FUNDS = 300;
 
 //end constants
 
-//tileset variables/constants
-var tileset;
-var ROWS = 20;
-var COLS = 20;
-var grass = 0;
-var road = 1;
-var tree = 2;
-var wood = 3;
-var NUM_STATES = 4;
+var tilesetImage = new Image();
+tilesetImage.src = 'Assets/Media/Images/Tileset1.png';
+tilesetImage.onload = drawImage;
+var tileSize = 32;       // The size of a tile (32×32)
+var rowTileCount = 20;   // The number of tiles in a row of our background
+var colTileCount = 32;   // The number of tiles in a column of our background
+var imageNumTiles = 16;  // The number of tiles per row in the tileset image
+function drawImage () {
+   for (var r = 0; r < rowTileCount; r++) {
+      for (var c = 0; c < colTileCount; c++) {
+         var tile = ground[ r ][ c ];
+         var tileRow = (tile / imageNumTiles) | 0; // Bitwise OR operation
+         var tileCol = (tile % imageNumTiles) | 0;
+         ctx.drawImage(tilesetImage, (tileCol * tileSize), (tileRow * tileSize), tileSize, tileSize, (c * tileSize), (r * tileSize), tileSize, tileSize);
+      }
+   }
+}
 
-//end tileset variables/constants
-
-function Tile(){
-	var tTile = new Sprite(canvas, "Assets/Media/Images/Tiles/GrassTile.png", 32, 32, tTile);
-	tTile.state = grass;
-	tTile.images = new Array("Assets/Media/Images/Tiles/GrassTile.png", "Assets/Media/Images/Tiles/WoodPlanksTile.png", "Assets/Media/Images/Tiles/Tree.png", "Assets/Media/Images/Tiles/Road.png");
-	tTile.row = 0;
-	tTile.col = 0;
-	
-	tTile.setState = function(state){
-		this.state = state;
-		this.setImageFile(this.images[this.state]);
-	} // end setState()
-	
-	tTile.getRow = function(){
-		return this.row;
-	} // end getRow()
+var ground = [
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79],
+ [79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79, 79]
+ ];
         
-	tTile.getCol = function(){
-		return this.col;
-	} // end getCol()
-        
-	tTile.getState = function(){
-		return this.state;
-	} // end getState()
-        
-	return tTile;
-} //end Tile()
-    
-function setupTiles(){
-  tileset = new Array(ROWS);
-  for (row = 0; row < ROWS; row++){
-    var tRow = new Array(COLS);
-    for (col = 0; col < COLS; col++){
-      tRow[col] = new Tile();
-      var xPos = 16 + (32 * col);
-      var yPos = 16 + (32 * row);
-      tRow[col].setPosition(xPos, yPos);
-      tRow[col].row = row;
-      tRow[col].col = col;
-    } // end for
-    tileset[row] = tRow;
-  } // end for
-  tileset.draw();
-} // end setupTiles()
-    
-function updateTiles(){
-  for (row = 0; row < ROWS; row++){
-    for (col = 0; col < COLS; col++){
-      tileset[row][col].update();
-    } // end for
-  } // end for
-} // end updateTiles()
-    
-function loadMap() {
-  map = [
-    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-    new Array(0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0),  
-    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),  
-    new Array(0,0,2,0,0,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1),  
-    new Array(0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1),  
-    new Array(0,0,0,0,2,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1),  
-    new Array(0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0),  
-    new Array(0,0,2,0,0,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0),  
-    new Array(0,0,0,0,0,0,1,1,1,0,3,3,0,0,0,0,0,0,0,0),  
-    new Array(0,2,0,2,0,0,1,1,1,0,3,3,0,0,0,0,0,0,0,0),  
-    new Array(0,0,2,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0),  
-    new Array(0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0),  
-    new Array(0,0,2,0,2,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0),  
-    new Array(0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0),  
-    new Array(1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0),
-    new Array(1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0),
-    new Array(1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0),
-    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
-    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
-    new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
-  ];
-        
-  for (row = 0; row < ROWS; row++){
-    for (col = 0; col < COLS; col++){
-      currentVal = map[row][col];
-      tileset[row][col].setState(currentVal);
-    } // end for
-  } // end for
-} //end loadMap()
 
 function takeFunds(amount) {
 	FUNDS = FUNDS - amount;
@@ -222,13 +168,10 @@ function init() {
 	localStorage.setItem("USERNAME", userName);
 	
 	makeEnemies();
-	setupTiles();
-  loadMap();
 } //end init()
 
 function update() {
 	showFunds();
-  updateTiles();
 } //end update()
 
 setInterval(update, 1000/FPS);
