@@ -28,7 +28,7 @@ var FUNDS = 300;
 //end constants
 
 var tilesetImage = new Image();
-tilesetImage.src = 'http://lunar.lostgarden.com/uploaded_images/ExteriorTest-760306.jpg';
+tilesetImage.src = 'Assets/Media/Images/Tileset1.png';
 tilesetImage.onload = drawImage;
 var tileSize = 32;       // The size of a tile (32×32)
 var rowTileCount = 20;   // The number of tiles in a row of our background
