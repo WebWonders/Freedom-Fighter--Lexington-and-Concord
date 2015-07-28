@@ -27,18 +27,6 @@ var FUNDS = 300;
 
 //end constants
 
-//tileset variables/constants
-var tileset;
-var ROWS = 20;
-var COLS = 20;
-var grass = 0;
-var road = 1;
-var tree = 2;
-var wood = 3;
-var NUM_STATES = 4;
-
-//end tileset variables/constants
-
 var tilesetImage = new Image();
 tilesetImage.src = 'http://lunar.lostgarden.com/uploaded_images/ExteriorTest-760306.jpg';
 tilesetImage.onload = drawImage;
