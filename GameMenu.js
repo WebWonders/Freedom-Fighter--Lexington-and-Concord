@@ -8,7 +8,7 @@ $(document).ready(function() {
     $('#game').hide();
     $('#about').hide();
     $('#how2play').hide();
-    $('#gameCanvas-level1').hide();
+    $('#game_level1').hide();
     $('#BGTrack').hide();
     $('#audioButton').hide();
     
