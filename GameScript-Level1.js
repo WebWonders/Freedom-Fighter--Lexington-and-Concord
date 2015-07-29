@@ -246,6 +246,7 @@ function init() {
 function infantryGo() {
   if (ENEMY_COUNTER < NUM_INFANTRY) {
     createInfantry();
+    console.log("Create Infantry")
     ENEMY_COUNTER += 1;
   }
 }
