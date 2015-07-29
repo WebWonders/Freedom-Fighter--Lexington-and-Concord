@@ -105,7 +105,7 @@ function addFunds(amount) {
 
 //player gunmen
 function BasicGunman() {
-	var tBasicGunman = new Sprite(canvas, '#', 15, 20, 'Basic Gunman');
+	var tBasicGunman = new Sprite(canvas, 'Assets/Media/Images/SoldierPic1.png', 15, 20, 'Basic Gunman');
 	tBasicGunman.health = 50;
 	tBasicGunman.range = 10;
   tBasicGunman.cost = 50;
