@@ -237,7 +237,10 @@ function init() {
 	
 	localStorage.setItem("USERNAME", userName);
 	
-	makeEnemies();
+  checkDifficulty();
+
+  infantryGo();
+	//makeEnemies();
 } //end init()
 
 function infantryGo() {
