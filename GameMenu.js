@@ -21,30 +21,22 @@ $(document).ready(function() {
     });
 });
 
+var audio1 = document.getElementById("BGTrack");
+
 //menu code
 //var menu = document.getElementById('menu');
 var audioOn = true;
 $(document).ready(function() {
     $('#audioButton').click(function() {
         if (audioOn === true) {
-            vid.pause();
+            audio1.pause();
             audioOn = false;
         }
         if (audioOn === false) {
-            vid.play();
+            audio1.play();
             audioOn = true;
         }
     });
-
-    var vid = document.getElementById("track"); 
-
-    function playVid() { 
-        vid.play(); 
-    } 
-
-    function pauseVid() { 
-        vid.pause(); 
-    }
 
     $('#playButton').click(function() {
         $('#menu').hide();
