@@ -19,6 +19,9 @@ var score;
 //end variables
 
 //constants
+var ENEMY_COUNTER = 0;
+var DIFFICULTY = 1;
+var ENEMY_RATE;
 var NUM_INFANTRY = 10;
 var NUM_ELITES = 5;
 var NUM_RUNNERS = 3;
@@ -26,6 +29,16 @@ var NUM_GENERALS = 1;
 var FUNDS = 300;
 
 //end constants
+
+function checkDifficulty() {
+  DIFFICULTY = prompt("Enter a difficulty below (1 for easy and 2 for hard):");
+}
+
+if (DIFFICULTY === 1) {
+  ENEMY_RATE = 10;
+} if (DIFFICULTY === 2) {
+  ENEMY_RATE = 5;
+}
 
 var tilesetImage = new Image();
 tilesetImage.src = 'Assets/Media/Images/Tileset1.png';
@@ -159,6 +172,10 @@ function General() {
   tGeneral.bounty = 100;
 } //end General()
 
+/*
+
+//I'm not sure about this code... I'll hold onto it for now and try something else until I can figure this out.
+
 function makeEnemies() {
 	var infantry = [];
     for (i = 0; i < NUM_INFANTRY; i++){
@@ -181,12 +198,39 @@ function makeEnemies() {
       runners[q].setPosition(10, 10); //change this position later...
     }
 } //end makeEnemies()
+*/
+
+function createInfantry() {
+  return new Infantry();
+  this.draw();
+} //end createInfantry()
+
+function createElite() {
+  return new Elite();
+  this.draw();
+} //end createElite()
+
+function createRunner() {
+  return new Runner();
+  this.draw();
+} //end createRunner()
+
+function createGeneral() {
+  return new General();
+  this.draw();
+} //end createGeneral()
+
+
 
 function showFunds() {
 	ctx.font = "10px Courier";
 	coinImage.setPosition(30, 175);
 	ctx.fillText(FUNDS, 15, 175);
-}
+} //end showFunds()
+
+
+
+
 
 function init() {
 	var userName;
@@ -196,8 +240,17 @@ function init() {
 	makeEnemies();
 } //end init()
 
+function infantryGo() {
+  if (ENEMY_COUNTER < NUM_INFANTRY) {
+    createInfantry();
+    ENEMY_COUNTER += 1;
+  }
+}
+
 function update() {
 	showFunds();
 } //end update()
 
 setInterval(update, 1000/FPS);
+
+setInterval(infantryGo, ENEMY_RATE * 1000);
