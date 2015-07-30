@@ -232,7 +232,7 @@ function showFunds() {
 	ctx.fillText(FUNDS, 15, 175);
 } //end showFunds()
 
-
+var testInfantry = new Infantry;
 
 
 
@@ -242,6 +242,7 @@ function init() {
 	localStorage.setItem("USERNAME", userName);
 	
   checkDifficulty();
+  testInfantry.draw();
 
   infantryGo();
 	//makeEnemies();
@@ -257,6 +258,7 @@ function infantryGo() {
 
 function update() {
 	showFunds();
+  testInfantry.update();
 } //end update()
 
 setInterval(update, 1000/FPS);
