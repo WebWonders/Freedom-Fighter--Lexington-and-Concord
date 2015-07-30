@@ -32,6 +32,10 @@ var FUNDS = 300;
 
 function checkDifficulty() {
   DIFFICULTY = prompt("Enter a difficulty below (1 for easy and 2 for hard):");
+  if (DIFFICULTY === 2) {
+    NUM_INFANTRY = 15;
+    NUM_ELITES = 8
+  }
 }
 
 if (DIFFICULTY === 1) {
