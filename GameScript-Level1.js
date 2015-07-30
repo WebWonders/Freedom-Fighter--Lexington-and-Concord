@@ -141,7 +141,7 @@ function Cannon() {
 
 //enemy infantry
 function Infantry() {
-	var tInfantry = new Sprite(canvas, 'Assets/Media/Images/SoldierPic1.png', 15, 20, 'Infantry');
+	var tInfantry = new Sprite(canvas, 'Assets/Media/Images/SoldierPic1.png', 25, 25, 'Infantry');
 	tInfantry.health = 50;
 	tInfantry.MAXSPEED = 10;
   tInfantry.bounty = 25;
