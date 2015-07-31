@@ -7,3 +7,5 @@ Battle your way to victory with artillery, gunmen, and infantry! Defeat great an
 
 
 To run the game, open game.html file after downloading the .zip file (probably located around the lower right area of the main GitHub page).
+
+If you'd like to give a suggestion or help create this game, shoot apeggs2000 and email!
